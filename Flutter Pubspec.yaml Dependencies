@@ -1,0 +1,10 @@
+dependencies:
+  flutter:
+    sdk: flutter
+  firebase_core: ^2.4.1
+  firebase_auth: ^4.2.5
+  cloud_firestore: ^4.3.1
+  firebase_messaging: ^14.2.1
+  mqtt_client: ^9.6.3
+  flutter_local_notifications: ^13.0.0
+  intl: ^0.18.0
