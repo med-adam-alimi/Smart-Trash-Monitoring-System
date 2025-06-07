@@ -155,7 +155,7 @@ Contributions are welcome! If you'd like to improve this project, please:
 4.  Push to the branch (`git push origin feature/new-feature`).
 5.  Open a Pull Request.
 
-**photos about the mobile application :
+**Some photos about the mobile application :
 ![Capture](https://github.com/user-attachments/assets/38967b90-ae34-49b5-bf77-327b7781f7ac)
 
 ## Contact
