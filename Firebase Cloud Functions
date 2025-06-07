@@ -1,0 +1,35 @@
+const functions = require('firebase-functions');
+const admin = require('firebase-admin');
+admin.initializeApp();
+
+// Listen for changes in trash status
+exports.sendTrashNotification = functions.firestore
+  .document('trash_status/current')
+  .onUpdate(async (change, context) => {
+    const newValue = change.after.data();
+    const previousValue = change.before.data();
+
+    // Check if trash just became full
+    if (newValue.isFull && !previousValue.isFull) {
+      // Get all user tokens
+      const usersSnapshot = await admin.firestore().collection('users').get();
+      const tokens = usersSnapshot.docs.map(doc => doc.data().fcmToken).filter(token => token);
+      
+      if (tokens.length > 0) {
+        const payload = {
+          notification: {
+            title: 'Trash Bin Alert',
+            body: 'Your trash bin is almost full! Please empty it soon.',
+          },
+          data: {
+            click_action: 'FLUTTER_NOTIFICATION_CLICK',
+            status: 'trash_full',
+          },
+        };
+
+        return admin.messaging().sendToDevice(tokens, payload);
+      }
+    }
+    
+    return null;
+  });
