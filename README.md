@@ -12,7 +12,8 @@ The mobile application (developed with Flutter) allows users to:
 The smart trash can system (based on ESP32):
 * Uses ultrasonic sensors to detect the fill level of trash can compartments.
 * Sends level data via MQTT to a central broker.
-* Triggers notifications to the mobile application via Firebase Cloud Messaging (FCM).
+* Triggers notifications to the mobile application via Firebase Cloud Messaging (FCM)
+
 
 ## Features
 
@@ -153,6 +154,9 @@ Contributions are welcome! If you'd like to improve this project, please:
 3.  Commit your changes (`git commit -m 'Add new feature'`).
 4.  Push to the branch (`git push origin feature/new-feature`).
 5.  Open a Pull Request.
+
+**photos about the mobile application :
+![Capture](https://github.com/user-attachments/assets/38967b90-ae34-49b5-bf77-327b7781f7ac)
 
 ## Contact
 
